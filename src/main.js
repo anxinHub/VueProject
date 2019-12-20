@@ -11,12 +11,15 @@
 
 //导入router。如果导入的是文件夹，则会自动加载该文件夹下的index.js
 import router from './router'
+import store from './router/store'
+import Vant from 'vant'
 //使用vue
 import Vue from 'vue'
 //import axCompApp from './vue/firstuseVue'
 //导入自己的.vue文件，替换下边自定义对象
 import App from './App'
 import VueRouter from 'vue-router'
+Vue.use(Vant)
 
 /* // 自定义定义对象axComApp，包含vue的配置template,data,methods
 const axCompApp = {
@@ -75,7 +78,8 @@ var aa = new Vue({
 // /* 使用render代替template和components。使用vue路由
 new Vue({
   el:'#app',
+  store,
+  router: router,
   render: h => h(App),
-  router: router
 })
 // */
