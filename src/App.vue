@@ -1,36 +1,14 @@
 <template>
   <div id="app">
-    <keep-alive>
-      <router-view v-if="$route.meta.keepAlive && isRouterAlive"/>
-    </keep-alive>
-    <router-view v-if="!$route.meta.keepAlive && isRouterAlive"></router-view>
-    <Cpn/>
+    <BorrowMoneyApply/>
   </div>
 </template>
 
 <script>
-  import Cpn from "./vue/Cpn"
+  import BorrowMoneyApply from "./vue/BorrowMoneyApply"
   export default {
-    provide (){
-      return {
-        reload:this.reload
-      }
-    },
-    data(){
-      return {
-        isRouterAlive:true
-      }
-    },
-    methods:{
-      reload (){
-        this.isRouterAlive = false
-        this.$nextTick(function(){
-          this.isRouterAlive = true
-        })
-      }
-    },
     components:{
-      Cpn
+      BorrowMoneyApply
     }
   }
 </script>

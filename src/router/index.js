@@ -7,11 +7,11 @@ Vue.use(VueRouter)
 const routers = [
   {
     path:'/',
-    redirect:
+    redirect:''
   },
   {
     path:'',
-    component:
+    component:''
   }
 ]
 //创建路由对象,mode默认为hash，url会有#

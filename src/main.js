@@ -11,11 +11,10 @@
 
 //导入router。如果导入的是文件夹，则会自动加载该文件夹下的index.js
 import router from './router'
-
 //使用vue
 import Vue from 'vue'
+//import axCompApp from './vue/firstuseVue'
 //导入自己的.vue文件，替换下边自定义对象
-import axCompApp from './vue/firstuseVue'
 import App from './App'
 import VueRouter from 'vue-router'
 
@@ -39,8 +38,9 @@ const axCompApp = {
     }
   }
 }
-*/
+// */
 
+//属性内定义template
 // 使用template替换main.html里id为el定义的<div>根
 /* 直接在template里写入html , data,methods也在new里定义
 const divApp = new Vue({
@@ -58,29 +58,21 @@ const divApp = new Vue({
   <div>
   <h1>{{name}}</h1>
   <button @click="increment">按钮</button>
-  </div>`
 })
 // */
 
+//属性外定义js, 属性外定义vue
 /* components引入包含template、data、methods的对象
-new Vue({
+var aa = new Vue({
   el: '#app',
-  template:'<App/>',
+  template:'<axCompApp/>',
   components:{
-    App
+    axCompApp
   },
-  
 })
-*/ 
+// */ 
 
-/* 使用render代替template和components 
-new Vue({
- el:'#app',
- render: h => h(App)
-})
-// */
-
-// /* 使用vue路由
+// /* 使用render代替template和components。使用vue路由
 new Vue({
   el:'#app',
   render: h => h(App),
